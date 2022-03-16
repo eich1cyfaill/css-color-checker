@@ -1,4 +1,24 @@
-let cssColors = ["red", "orange", "black", "green"]
+let cssColors = ["red", "orange", "black", "green", "silver", "gray", "white",
+"maroon", "purple", "fuchsia", "lime", "olive", "yellow", "navy", "blue", "teal", "aqua", "aliceblue",
+"antiquewhite", "aquamarine", "azure", "beige", "bisque", "blanchedalmond", "blueviolet", "brown", "burlywood",
+"cadetblue", "chartreuse", "chocolate", "coral", "cornflowerblue", "cornsilk", "crimson",
+"cyan", "darkblue", "darkcyan", "darkgoldenrod", "darkgray", "darkgreen", "darkgrey", "darkkhaki",
+"darkmagenta", "darkolivegreen", "darkorange", "darkorchid", "darkred", "darksalmon", "darkseagreen",
+"darkslateblue", "darkslategray", "darkslategrey", "darkturquoise", "darkviolet", "deeppink", "deepskyblue",
+"dimgray", "dimgrey", "dodgerblue", "firebrick", "floralwhite", "forestgreen", "fuchsia", "gainsboro",
+"ghostwhite", "gold", "goldenrod", "greenyellow", "grey", "honeydew", "hotpink", "indianred", "indigo",
+"ivory", "khaki", "lavender", "lavenderblush", "lawngreen", "lemonchiffon", "lightblue", "lightcoral",
+"lightcyan", "lightgoldenrodyellow", "lightgray", "lightgreen", "lightgrey", "lightpink", "lightsalmon",
+"lightseagreen", "lightskyblue", "lightslategray", "lightslategrey", "lightsteelblue", "lightyellow", "limegreen",
+    "linen", "magenta", "mediumaquamarine", "mediumblue", "mediumorchid", "mediumpurple", "mediumseagreen",
+    "mediumslateblue", "mediumspringgreen", "mediumturquoise", "mediumvioletred", "midnightblue", "mintcream",
+    "mistyrose", "moccasin", "navajowhite", "oldlace", "olive", "olivedrab", "orange", "orangered",
+"orchid", "palegoldenrod", "palegreen", "paleturquoise", "palevioletred", "papayawhip", "peachpuff", "peachpuff",
+    "peru", "pink", "plum", "powderblue", "rosybrown", "royalblue", "saddlebrown", "salmon", "sandybrown",
+    "seagreen", "seashell", "sienna", "silver", "skyblue", "slateblue", "slategray", "slategrey", "snow",
+    "springgreen", "steelblue", "tan", "thistle", "tomato", "turquoise", "violet", "wheat", "whitesmoke", "yellowgreen"
+]
+
 
 const isSameDomain = (styleSheet) => {
     if(!styleSheet.href) {
@@ -38,11 +58,12 @@ const getColoredCSSProps = () => {
 }
 
 const coloredCssProps = getColoredCSSProps()
+console.log(coloredCssProps)
 
 coloredCssProps.map(el => {
     let item = document.createElement("div")
-    item.style.width = "150px"
-    item.style.height = "150px"
+    item.style.width = "200px"
+    item.style.height = "200px"
     item.style.background = `${el}`
     item.classList.add('color__item')
     document.body.appendChild(item)
@@ -70,6 +91,7 @@ function showClasses(e){
     stylesWindow.style.bottom = "15px"
     stylesWindow.style.right = "15px"
     stylesWindow.style.borderRadius = "25px"
+    stylesWindow.style.fontSize = "11px"
     let usedStyles = []
     getCSSCustomPropIndex().map(el => {
         if(this.style.background === el[1]){
@@ -77,11 +99,11 @@ function showClasses(e){
         }
     })
     console.log(usedStyles)
-    let color = document.createElement("h1")
+    let color = document.createElement("h4")
     let colorText = document.createTextNode(this.style.background)
     color.appendChild(colorText)
     stylesWindow.appendChild(color)
-    let heading = document.createElement("h4")
+    let heading = document.createElement("h6")
     let headingText = document.createTextNode(usedStyles.map(el => `  ${el} `))
     heading.appendChild(headingText)
     stylesWindow.appendChild(heading)
