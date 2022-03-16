@@ -58,6 +58,14 @@ const getColoredCSSProps = () => {
 }
 
 const coloredCssProps = getColoredCSSProps()
+
+let title = document.createElement("h1")
+let count = document.createTextNode(` total: ${coloredCssProps.length}`)
+title.appendChild(count)
+document.body.appendChild(title)
+
+
+
 console.log(coloredCssProps)
 
 coloredCssProps.map(el => {
